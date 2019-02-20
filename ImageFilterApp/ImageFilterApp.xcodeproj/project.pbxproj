@@ -11,6 +11,8 @@
 		3AB9D427A15AF06383B70DE6 /* Pods_ImageFilterAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C55685589EBBAD3888F7AF /* Pods_ImageFilterAppUITests.framework */; };
 		54078AE3394D97305516A74C /* Pods_ImageFilterAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C587413D60364EF7B6F638 /* Pods_ImageFilterAppTests.framework */; };
 		7E6E0BF8221D00EB00A61A97 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0BF7221D00EB00A61A97 /* BaseViewController.swift */; };
+		7E6E0BFB221D0E2B00A61A97 /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0BFA221D0E2B00A61A97 /* ImageFilter.swift */; };
+		7E6E0BFE221D1BD900A61A97 /* model10211037_TP_V.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E6E0BFD221D1BD900A61A97 /* model10211037_TP_V.jpg */; };
 		7EAE364C221CD74D00C73511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE364B221CD74D00C73511 /* AppDelegate.swift */; };
 		7EAE364E221CD74D00C73511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE364D221CD74D00C73511 /* ViewController.swift */; };
 		7EAE3654221CD74D00C73511 /* ImageFilterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE3652221CD74D00C73511 /* ImageFilterApp.xcdatamodeld */; };
@@ -45,6 +47,8 @@
 		69322AE2D636464428A93ECF /* Pods-ImageFilterAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageFilterAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImageFilterAppTests/Pods-ImageFilterAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		793560EA61FB9234DA5FDB35 /* Pods_ImageFilterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageFilterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6E0BF7221D00EB00A61A97 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		7E6E0BFA221D0E2B00A61A97 /* ImageFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
+		7E6E0BFD221D1BD900A61A97 /* model10211037_TP_V.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = model10211037_TP_V.jpg; sourceTree = "<group>"; };
 		7EAE3648221CD74D00C73511 /* ImageFilterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFilterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAE364B221CD74D00C73511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EAE364D221CD74D00C73511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E6E0BFC221D1BD900A61A97 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7E6E0BFD221D1BD900A61A97 /* model10211037_TP_V.jpg */,
+			);
+			path = Assets;
+			sourceTree = SOURCE_ROOT;
+		};
 		7EAE363F221CD74C00C73511 = {
 			isa = PBXGroup;
 			children = (
@@ -119,10 +131,12 @@
 				7EAE364B221CD74D00C73511 /* AppDelegate.swift */,
 				7EAE364D221CD74D00C73511 /* ViewController.swift */,
 				7E6E0BF7221D00EB00A61A97 /* BaseViewController.swift */,
+				7E6E0BFA221D0E2B00A61A97 /* ImageFilter.swift */,
 				7EAE3655221CD75300C73511 /* Assets.xcassets */,
 				7EAE3657221CD75300C73511 /* LaunchScreen.storyboard */,
 				7EAE365A221CD75300C73511 /* Info.plist */,
 				7EAE3652221CD74D00C73511 /* ImageFilterApp.xcdatamodeld */,
+				7E6E0BFC221D1BD900A61A97 /* Assets */,
 			);
 			path = ImageFilterApp;
 			sourceTree = "<group>";
@@ -276,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E6E0BFE221D1BD900A61A97 /* model10211037_TP_V.jpg in Resources */,
 				7EAE3659221CD75300C73511 /* LaunchScreen.storyboard in Resources */,
 				7EAE3656221CD75300C73511 /* Assets.xcassets in Resources */,
 			);
@@ -378,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EAE364E221CD74D00C73511 /* ViewController.swift in Sources */,
+				7E6E0BFB221D0E2B00A61A97 /* ImageFilter.swift in Sources */,
 				7E6E0BF8221D00EB00A61A97 /* BaseViewController.swift in Sources */,
 				7EAE364C221CD74D00C73511 /* AppDelegate.swift in Sources */,
 				7EAE3654221CD74D00C73511 /* ImageFilterApp.xcdatamodeld in Sources */,
