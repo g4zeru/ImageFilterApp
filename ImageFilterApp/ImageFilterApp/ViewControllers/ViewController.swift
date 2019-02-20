@@ -20,7 +20,7 @@ class ViewController: BaseViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.snp.makeConstraints { (constraint) in
             constraint.centerX.equalToSuperview()
-            constraint.centerY.equalToSuperview()
+            constraint.centerY.equalToSuperview().offset(50)
             constraint.width.equalToSuperview().multipliedBy(0.7)
             constraint.height.equalTo(imageView.snp.width).multipliedBy(1)
         }
