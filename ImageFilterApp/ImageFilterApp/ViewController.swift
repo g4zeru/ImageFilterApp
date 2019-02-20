@@ -10,8 +10,10 @@ import UIKit
 import SnapKit
 
 class ViewController: BaseViewController {
+    
     let imageView: UIImageView = UIImageView()
     let imageFilter = ImageFilter.sharedImageFilter
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(imageView)
@@ -28,6 +30,5 @@ class ViewController: BaseViewController {
         imageView.image = imageFilter.filter(image: image, index: 14)
         // Do any additional setup after loading the view, typically from a nib.
     }
-
 }
 

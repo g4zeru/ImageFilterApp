@@ -57,10 +57,10 @@ class ImageFilter {
         guard let ciImageData = filter?.outputImage, let rect = filter?.outputImage?.extent else {
             return nil
         }
-        guard let outputData = self.context.createCGImage(ciImageData, from: rect, format: CIFormat.RGBA8, colorSpace: CGColorSpace(name: CGColorSpace.displayP3)) else {
+        guard let imageData = self.context.createCGImage(ciImageData, from: rect, format: CIFormat.RGBA8, colorSpace: CGColorSpace(name: CGColorSpace.displayP3)) else {
             return nil
         }
-        return UIImage(cgImage: outputData)
+        return UIImage(cgImage: imageData)
     }
     
     func filterName(index: Int) -> String? {
