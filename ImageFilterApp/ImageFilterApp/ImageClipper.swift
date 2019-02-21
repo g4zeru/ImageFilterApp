@@ -12,6 +12,14 @@ import UIKit
 class ImageClipper {
     
     static func resize(image: UIImage, size: CGSize) -> UIImage? {
+        
+        guard image.size.width > 0 &&
+            image.size.height > 0 &&
+            size.width > 0 &&
+            size.height > 0 else {
+            return nil
+        }
+        
         let widthRatio = size.width / image.size.width
         let heightRatio = size.height / image.size.height
         let ratio = widthRatio < heightRatio ? widthRatio : heightRatio
