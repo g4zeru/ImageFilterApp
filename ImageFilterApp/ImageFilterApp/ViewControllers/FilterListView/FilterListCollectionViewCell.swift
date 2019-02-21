@@ -16,12 +16,21 @@ class FilterListCollectionViewCell: UICollectionViewCell {
     
     private let imageViewLayoutWidthSizeRatio = 0.7
     
-    override func awakeFromNib() {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         self.contentView.addSubview(self.imageView)
-        self.label.addSubview(self.label)
+        self.contentView.addSubview(self.label)
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
         self.label.translatesAutoresizingMaskIntoConstraints = false
-        setupLayout()
+        self.setupLayout()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        print(rect)
     }
     private func setupLayout() {
         self.imageView.snp.makeConstraints { (constraint) in
