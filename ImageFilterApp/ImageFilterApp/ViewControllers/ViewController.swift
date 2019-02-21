@@ -27,7 +27,6 @@ class ViewController: BaseViewController {
         guard let image = UIImage(named: "model") else {
             return
         }
-        imageView.image = imageFilter.filter(image: image, index: 14)
         // Do any additional setup after loading the view, typically from a nib.
     }
 }

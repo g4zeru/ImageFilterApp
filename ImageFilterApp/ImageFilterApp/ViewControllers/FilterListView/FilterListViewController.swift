@@ -14,7 +14,7 @@ class FilterListViewController: BaseViewController {
     
     private let filter = ImageFilter.sharedImageFilter
     
-    var image: UIImage? = UIImage(named: "model")
+    var image: UIImage? = UIImage(named: "lena")
     
     private let preview: UIImageView = UIImageView()
     private lazy var listView: UICollectionView = {
@@ -29,7 +29,6 @@ class FilterListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        preview.backgroundColor = UIColor.green
         listView.backgroundColor = UIColor.white
         self.view.addSubview(preview)
         self.view.addSubview(listView)
@@ -37,6 +36,13 @@ class FilterListViewController: BaseViewController {
         
         self.listView.dataSource = self
         self.listView.delegate = self
+        
+        self.preview.contentMode = .scaleAspectFit
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //self.preview.image = filter.createImage(filter: CustomColorClamp.filter(image: CIImage(image: self.image!), min: CustomColorClamp.min_A2, max: CustomColorClamp.max_A2))
+        self.preview.image = filter.createImage(filter: CustomGloomFilter.filter(image: CIImage(image: self.image!), radius: 10, intensity: 1))
     }
     
     private func setupLayout() {
@@ -58,7 +64,7 @@ class FilterListViewController: BaseViewController {
 extension FilterListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filter.effectFilterCount
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,7 +77,6 @@ extension FilterListViewController: UICollectionViewDataSource {
         guard let resizedImage = ImageClipper.resize(image: image, size: CGSize(width: 50, height: 50)) else {
             return cell
         }
-        cell.setupView(text: filter.filterName(index: indexPath.item), image: filter.filter(image: resizedImage, index: indexPath.item))
         return cell
     }
 }

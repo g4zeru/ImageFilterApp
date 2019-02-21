@@ -13,47 +13,13 @@ class ImageFilter {
     
     static let sharedImageFilter = ImageFilter()
     
-    var effectFilterCount: Int {
-        return self.defaultEffectFilter.count
-    }
-    
     private let context: CIContext
-    
-    private let defaultEffectFilter: [String] = ["CIColorCrossPolynomial",
-                                                 "CIColorCube",
-                                                 "CIColorCubeWithColorSpace",
-                                                 "CIColorInvert",
-                                                 "CIColorMap",
-                                                 "CIColorMonochrome",
-                                                 "CIColorPosterize",
-                                                 "CIFalseColor",
-                                                 "CIMaskToAlpha",
-                                                 "CIMaximumComponent",
-                                                 "CIMinimumComponent",
-                                                 "CIPhotoEffectChrome",
-                                                 "CIPhotoEffectFade",
-                                                 "CIPhotoEffectInstant",
-                                                 "CIPhotoEffectMono",
-                                                 "CIPhotoEffectNoir",
-                                                 "CIPhotoEffectProcess",
-                                                 "CIPhotoEffectTonal",
-                                                 "CIPhotoEffectTransfer",
-                                                 "CISepiaTone",
-                                                 "CIVignette",
-                                                 "CIVignetteEffect"]
     
     init() {
         self.context = CIContext(options: nil)
     }
     
-    func filter(image: UIImage, index: Int) -> UIImage? {
-        guard 0..<self.effectFilterCount ~= index else {
-            return nil
-        }
-        let filter = CIFilter(name: defaultEffectFilter[index])
-        let sourceImage = CIImage(image: image)
-        filter?.setDefaults()
-        filter?.setValue(sourceImage, forKey: kCIInputImageKey)
+    func createImage(filter: CIFilter?) -> UIImage? {
         guard let ciImageData = filter?.outputImage, let rect = filter?.outputImage?.extent else {
             return nil
         }
@@ -61,12 +27,5 @@ class ImageFilter {
             return nil
         }
         return UIImage(cgImage: imageData)
-    }
-    
-    func filterName(index: Int) -> String? {
-        guard 0..<self.effectFilterCount ~= index else {
-            return nil
-        }
-        return defaultEffectFilter[index]
     }
 }
