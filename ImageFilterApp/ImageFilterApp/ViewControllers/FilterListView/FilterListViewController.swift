@@ -54,6 +54,7 @@ class FilterListViewController: BaseViewController {
         }
     }
 }
+
 extension FilterListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -74,12 +75,14 @@ extension FilterListViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
 extension FilterListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         return
     }
 }
+
 extension FilterListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
