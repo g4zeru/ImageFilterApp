@@ -27,7 +27,6 @@ class FilterListViewController: BaseViewController {
         return collectionView
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         preview.backgroundColor = UIColor.green
@@ -39,6 +38,7 @@ class FilterListViewController: BaseViewController {
         self.listView.dataSource = self
         self.listView.delegate = self
     }
+    
     private func setupLayout() {
         self.preview.snp.makeConstraints { (constraint) in
             constraint.leading.equalToSuperview().offset(20)
@@ -55,6 +55,7 @@ class FilterListViewController: BaseViewController {
     }
 }
 extension FilterListViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filter.effectFilterCount
     }
@@ -74,11 +75,13 @@ extension FilterListViewController: UICollectionViewDataSource {
     }
 }
 extension FilterListViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         return
     }
 }
 extension FilterListViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.height, height: collectionView.frame.height)
     }

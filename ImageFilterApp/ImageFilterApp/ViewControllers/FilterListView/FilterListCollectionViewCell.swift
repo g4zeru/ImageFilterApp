@@ -24,6 +24,7 @@ class FilterListCollectionViewCell: UICollectionViewCell {
         self.label.translatesAutoresizingMaskIntoConstraints = false
         self.setupLayout()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -32,6 +33,7 @@ class FilterListCollectionViewCell: UICollectionViewCell {
         super.draw(rect)
         print(rect)
     }
+    
     private func setupLayout() {
         self.imageView.snp.makeConstraints { (constraint) in
             constraint.size.equalToSuperview().multipliedBy(self.imageViewLayoutWidthSizeRatio)
@@ -45,6 +47,7 @@ class FilterListCollectionViewCell: UICollectionViewCell {
             constraint.bottom.equalToSuperview().offset(5)
         }
     }
+    
     func setupView(text: String?, image: UIImage?) {
         self.imageView.image = image
         self.label.text = text

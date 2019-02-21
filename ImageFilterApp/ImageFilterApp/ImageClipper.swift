@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class ImageClipper {
+    
     static func resize(image: UIImage, size: CGSize) -> UIImage? {
         let widthRatio = size.width / image.size.width
         let heightRatio = size.height / image.size.height
