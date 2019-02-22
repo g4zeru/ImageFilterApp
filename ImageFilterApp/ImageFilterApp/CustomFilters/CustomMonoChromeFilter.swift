@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class CustomMonoChromeFilter {
+class CustomMonoChromeFilter: CIFilter {
+    
     class var A1: CIColor {
         return CIColor(red: 180/255, green: 180/255, blue: 60/255, alpha: 0.8, colorSpace: CGColorSpace(name: CGColorSpace.displayP3)!)!
     }
@@ -20,15 +21,29 @@ class CustomMonoChromeFilter {
         return CIColor(red: 160/255, green: 130/255, blue: 100/255, alpha: 0.8, colorSpace: CGColorSpace(name: CGColorSpace.displayP3)!)!
     }
     
+    private var inputImage: CIImage?
+    private var color: CIColor?
+    private var intensity: NSNumber?
     
-    static func filter(image: CIImage?, color: CIColor) -> CIFilter? {
-        guard let filter = CIFilter(name: "CIColorMonochrome") else {
+    override var outputImage: CIImage? {
+        guard let inputImage = self.inputImage else {
             return nil
         }
-        filter.setDefaults()
-        filter.setValue(image, forKey: "inputImage")
-        filter.setValue(color, forKey: "inputColor")
-        filter.setValue(0.8, forKey: "inputIntensity")
+        guard let monoChromeFilter: CIFilter = CIFilter(name: "CIColorMonoChrome") else {
+            return inputImage
+        }
+        monoChromeFilter.setDefaults()
+        monoChromeFilter.setValue(inputImage, forKey: "inputImage")
+        monoChromeFilter.setValue(self.color, forKey: "inputColor")
+        monoChromeFilter.setValue(self.intensity, forKey: "inputIntensity")
+        return monoChromeFilter.outputImage
+    }
+    
+    static func create(image: CIImage?, color: CIColor, intensity: NSNumber) -> CIFilter? {
+        let filter = CustomMonoChromeFilter()
+        filter.inputImage = image
+        filter.color = color
+        filter.intensity = intensity
         return filter
     }
 }
