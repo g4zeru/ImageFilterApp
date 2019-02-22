@@ -85,7 +85,7 @@ class GloomViewController: BaseViewController {
         guard let image = self.originImage else {
             return
         }
-        let gloomFilter: CIFilter = GloomFilterCreator.filter(image: CIImage(image: image), radius: NSNumber(value: radiusValue), intensity: NSNumber(value: intensityValue))
+        let gloomFilter: CIFilter = CustomGloomFilter.create(image: CIImage(image: image), radius: NSNumber(value: radiusValue), intensity: NSNumber(value: intensityValue))
         self.imageView.image = self.filter.createImage(filter: gloomFilter)
     }
 }

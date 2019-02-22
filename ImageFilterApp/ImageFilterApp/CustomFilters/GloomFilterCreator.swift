@@ -9,18 +9,6 @@
 import Foundation
 import UIKit
 
-struct GloomFilterCreator {
-    
-    static func filter(image: CIImage?, radius: NSNumber, intensity: NSNumber) -> CIFilter {
-        let filter = CustomGloomFilter()
-        filter.setDefaults()
-        filter.inputImage = image
-        filter.radius = radius
-        filter.intensity = intensity
-        return filter
-    }
-}
-
 class CustomGloomFilter: CIFilter {
     fileprivate var inputImage: CIImage?
     fileprivate var radius: NSNumber = 0.0
@@ -57,5 +45,13 @@ class CustomGloomFilter: CIFilter {
             return gloomedImage
         }
         return croppedImage
+    }
+    static func create(image: CIImage?, radius: NSNumber, intensity: NSNumber) -> CIFilter {
+        let filter = CustomGloomFilter()
+        filter.setDefaults()
+        filter.inputImage = image
+        filter.radius = radius
+        filter.intensity = intensity
+        return filter
     }
 }
