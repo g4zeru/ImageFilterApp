@@ -31,7 +31,7 @@ class CustomUnsharpMaskFilter: CIFilter {
     }
     
     static func create(image: CIImage?, radius: NSNumber, intensity: NSNumber) -> CIFilter {
-        let filter = CustomUnshapeMaskFilter()
+        let filter = CustomUnsharpMaskFilter()
         filter.setDefaults()
         filter.inputImage = image
         filter.radius = radius
