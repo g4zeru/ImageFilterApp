@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CustomColorClamp {
+class CustomColorClampFilter: CIFilter {
     class var min_A1: CIVector {
         return CIVector(x: 0.08, y: 0.12, z: 0.10, w: 0.00)
     }
@@ -23,14 +23,29 @@ class CustomColorClamp {
     class var max_A2: CIVector {
         return CIVector(x: 0.3, y: 0.5, z: 0.7, w: 0.9)
     }
-    static func filter(image: CIImage?, min: CIVector, max: CIVector) -> CIFilter? {
-        guard let filter = CIFilter(name: "CIColorClamp") else {
+    
+    private var inputImage: CIImage?
+    private var minimumVector: CIVector?
+    private var maximumVector: CIVector?
+    
+    override var outputImage: CIImage? {
+        guard let inputImage = self.inputImage else {
             return nil
         }
-        filter.setDefaults()
-        filter.setValue(image, forKey: "inputImage")
-        filter.setValue(min, forKey: "inputMinComponents")
-        filter.setValue(max, forKey: "inputMaxComponents")
+        guard let filter = CIFilter(name: "CIColorClamp") else {
+            return inputImage
+        }
+        filter.setValue(inputImage, forKey: "inputImage")
+        filter.setValue(minimumVector, forKey: "inputMinComponents")
+        filter.setValue(maximumVector, forKey: "inputMaxComponents")
+        return filter.outputImage
+    }
+    
+    static func create(image: CIImage?, min: CIVector, max: CIVector) -> CIFilter? {
+        let filter = CustomColorClampFilter()
+        filter.inputImage = image
+        filter.minimumVector = min
+        filter.maximumVector = max
         return filter
     }
 }
