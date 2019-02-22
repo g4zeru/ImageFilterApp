@@ -24,18 +24,6 @@ class GloomViewController: BaseViewController {
     
     private let intensitySlider: UISlider = {
         let slider = UISlider()
-        ///Range参照 https://qiita.com/shtnkgm/items/fb1425ef88d31fdad1d4#inputradius-14
-        let radiusMaximumValue: Float = 100.00
-        let radiusMinimumValue: Float = 0.00
-        let radiusDefaultValue: Float = 10.00
-        slider.maximumValue = radiusMaximumValue
-        slider.minimumValue = radiusMinimumValue
-        slider.value = radiusDefaultValue
-        return slider
-    }()
-    
-    private let radiusSlider: UISlider = {
-        let slider = UISlider()
         ///Range参照 https://qiita.com/shtnkgm/items/fb1425ef88d31fdad1d4#inputintensity
         let intensityMaximumValue: Float = 1.00
         let intensityMinimumValue: Float = 0.00
@@ -43,6 +31,18 @@ class GloomViewController: BaseViewController {
         slider.maximumValue = intensityMaximumValue
         slider.minimumValue = intensityMinimumValue
         slider.value = intensityDefaultValue
+        return slider
+    }()
+    
+    private let radiusSlider: UISlider = {
+        let slider = UISlider()
+        ///Range参照 https://qiita.com/shtnkgm/items/fb1425ef88d31fdad1d4#inputradius-14
+        let radiusMaximumValue: Float = 100.00
+        let radiusMinimumValue: Float = 0.00
+        let radiusDefaultValue: Float = 10.00
+        slider.maximumValue = radiusMaximumValue
+        slider.minimumValue = radiusMinimumValue
+        slider.value = radiusDefaultValue
         return slider
     }()
     
