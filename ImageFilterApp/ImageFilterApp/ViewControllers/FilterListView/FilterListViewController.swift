@@ -12,8 +12,6 @@ import SnapKit
 
 class FilterListViewController: BaseViewController {
     
-    private let filter = ImageFilter.sharedImageFilter
-    
     var image: UIImage? = UIImage(named: "lena")
     
     private let preview: UIImageView = UIImageView()
@@ -42,7 +40,6 @@ class FilterListViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //self.preview.image = filter.createImage(filter: CustomColorClamp.filter(image: CIImage(image: self.image!), min: CustomColorClamp.min_A2, max: CustomColorClamp.max_A2))
-        self.preview.image = filter.createImage(filter: GloomFilterCreator.filter(image: CIImage(image: self.image!), radius: 10, intensity: 1))
     }
     
     private func setupLayout() {
