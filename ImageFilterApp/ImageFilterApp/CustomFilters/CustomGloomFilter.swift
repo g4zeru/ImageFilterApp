@@ -11,9 +11,9 @@ import UIKit
 
 class CustomGloomFilter: CIFilter {
     
-    fileprivate var inputImage: CIImage?
-    fileprivate var radius: NSNumber = 0.0
-    fileprivate var intensity: NSNumber = 0.0
+    private var inputImage: CIImage?
+    private var radius: NSNumber = 0.0
+    private var intensity: NSNumber = 0.0
     
     override var outputImage: CIImage? {
         guard let inputImage = self.inputImage else {
