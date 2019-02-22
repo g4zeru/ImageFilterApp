@@ -21,7 +21,6 @@ class GloomViewController: BaseViewController {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
     private let intensitySlider: UISlider = {
         let slider = UISlider()
         ///Range参照 https://qiita.com/shtnkgm/items/fb1425ef88d31fdad1d4#inputintensity
@@ -33,7 +32,6 @@ class GloomViewController: BaseViewController {
         slider.value = intensityDefaultValue
         return slider
     }()
-    
     private let radiusSlider: UISlider = {
         let slider = UISlider()
         ///Range参照 https://qiita.com/shtnkgm/items/fb1425ef88d31fdad1d4#inputradius-14

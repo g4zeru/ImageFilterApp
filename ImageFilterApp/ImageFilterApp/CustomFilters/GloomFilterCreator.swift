@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 
 class CustomGloomFilter: CIFilter {
+    
     fileprivate var inputImage: CIImage?
     fileprivate var radius: NSNumber = 0.0
     fileprivate var intensity: NSNumber = 0.0
+    
     override var outputImage: CIImage? {
         guard let inputImage = self.inputImage else {
             return nil
@@ -46,6 +48,7 @@ class CustomGloomFilter: CIFilter {
         }
         return croppedImage
     }
+    
     static func create(image: CIImage?, radius: NSNumber, intensity: NSNumber) -> CIFilter {
         let filter = CustomGloomFilter()
         filter.setDefaults()
