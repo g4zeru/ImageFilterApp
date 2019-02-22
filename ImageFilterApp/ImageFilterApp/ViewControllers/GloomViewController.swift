@@ -21,6 +21,7 @@ class GloomViewController: BaseViewController {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
+    
     private let intensitySlider: UISlider = {
         let slider = UISlider()
         ///Range参照 https://qiita.com/shtnkgm/items/fb1425ef88d31fdad1d4#inputradius-14
@@ -32,6 +33,7 @@ class GloomViewController: BaseViewController {
         slider.value = radiusDefaultValue
         return slider
     }()
+    
     private let radiusSlider: UISlider = {
         let slider = UISlider()
         ///Range参照 https://qiita.com/shtnkgm/items/fb1425ef88d31fdad1d4#inputintensity
@@ -55,6 +57,7 @@ class GloomViewController: BaseViewController {
         self.radiusSlider.addTarget(self, action: #selector(didChangeSliderValue), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
+    
     private func setupLayout() {
         self.radiusSlider.snp.makeConstraints { (constraint) in
             constraint.centerX.equalToSuperview()
@@ -75,6 +78,7 @@ class GloomViewController: BaseViewController {
             constraint.bottom.equalTo(self.intensitySlider.snp.top).offset(-20)
         }
     }
+    
     @objc private func didChangeSliderValue() {
         let radiusValue = self.radiusSlider.value
         let intensityValue = self.intensitySlider.value
