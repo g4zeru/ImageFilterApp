@@ -9,11 +9,7 @@
 import Foundation
 import UIKit
 
-class GloomViewController: BaseViewController {
-
-    var originImage: UIImage? = UIImage(named: "lena")
-    
-    let filter: ImageFilter = ImageFilter.sharedImageFilter
+class GloomFilterPreviewController: BaseViewController {
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
