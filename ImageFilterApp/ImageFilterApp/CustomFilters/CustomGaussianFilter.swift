@@ -1,19 +1,18 @@
 //
-//  CustomGloomFilter.swift
+//  CustomGaussianFilter.swift
 //  ImageFilterApp
 //
-//  Created by haruta yamada on 2019/02/21.
+//  Created by haruta yamada on 2019/02/22.
 //  Copyright © 2019 teranyan. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class CustomGloomFilter: CIFilter {
+class CustomGaussianFilter: CIFilter {
     
     private var inputImage: CIImage?
     private var radius: NSNumber = 0.0
-    private var intensity: NSNumber = 0.0
     
     override var outputImage: CIImage? {
         guard let inputImage = self.inputImage else {
@@ -28,12 +27,11 @@ class CustomGloomFilter: CIFilter {
         guard let affineClampedImage = affineClampFilter.outputImage else {
             return inputImage
         }
-        guard let gloomFilter = CIFilter(name: "CIGloom") else {
+        guard let gloomFilter = CIFilter(name: "CIGaussianBlur") else {
             return affineClampedImage
         }
         gloomFilter.setValue(affineClampedImage, forKey: "inputImage")
         gloomFilter.setValue(radius, forKey: "inputRadius")
-        gloomFilter.setValue(intensity, forKey: "inputIntensity")
         guard let gloomedImage = gloomFilter.outputImage else {
             return affineClampedImage
         }
@@ -49,12 +47,11 @@ class CustomGloomFilter: CIFilter {
         return croppedImage
     }
     
-    static func create(image: CIImage?, radius: NSNumber, intensity: NSNumber) -> CIFilter {
-        let filter = CustomGloomFilter()
+    static func create(image: CIImage?, radius: NSNumber) -> CIFilter {
+        let filter = CustomGaussianFilter()
         filter.setDefaults()
         filter.inputImage = image
         filter.radius = radius
-        filter.intensity = intensity
         return filter
     }
 }
