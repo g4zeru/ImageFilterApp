@@ -22,6 +22,7 @@
 		7E6E0C11221E7DAE00A61A97 /* CustomGloomFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C10221E7DAE00A61A97 /* CustomGloomFilter.swift */; };
 		7E6E0C13221F80FD00A61A97 /* GloomFilterPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C12221F80FD00A61A97 /* GloomFilterPreviewController.swift */; };
 		7E6E0C19221F9E3100A61A97 /* CustomGaussianFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C18221F9E3100A61A97 /* CustomGaussianFilter.swift */; };
+		7E6E0C1D221FB4BA00A61A97 /* CustomSharpenLuminanceFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C1C221FB4BA00A61A97 /* CustomSharpenLuminanceFilter.swift */; };
 		7E6E0C1B221F9FB100A61A97 /* GaussianFilterPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C1A221F9FB100A61A97 /* GaussianFilterPreviewController.swift */; };
 		7EAE364C221CD74D00C73511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE364B221CD74D00C73511 /* AppDelegate.swift */; };
 		7EAE364E221CD74D00C73511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE364D221CD74D00C73511 /* ViewController.swift */; };
@@ -68,6 +69,7 @@
 		7E6E0C10221E7DAE00A61A97 /* CustomGloomFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGloomFilter.swift; sourceTree = "<group>"; };
 		7E6E0C12221F80FD00A61A97 /* GloomFilterPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GloomFilterPreviewController.swift; sourceTree = "<group>"; };
 		7E6E0C18221F9E3100A61A97 /* CustomGaussianFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGaussianFilter.swift; sourceTree = "<group>"; };
+		7E6E0C1C221FB4BA00A61A97 /* CustomSharpenLuminanceFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSharpenLuminanceFilter.swift; sourceTree = "<group>"; };
 		7E6E0C1A221F9FB100A61A97 /* GaussianFilterPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussianFilterPreviewController.swift; sourceTree = "<group>"; };
 		7EAE3648221CD74D00C73511 /* ImageFilterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFilterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAE364B221CD74D00C73511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				7E6E0C0E221E710900A61A97 /* CustomColorClamp.swift */,
 				7E6E0C10221E7DAE00A61A97 /* CustomGloomFilter.swift */,
 				7E6E0C18221F9E3100A61A97 /* CustomGaussianFilter.swift */,
+				7E6E0C1C221FB4BA00A61A97 /* CustomSharpenLuminanceFilter.swift */,
 			);
 			path = CustomFilters;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				7E6E0C0B221E680B00A61A97 /* CustomMonoChromeFilter.swift in Sources */,
 				7E6E0C0F221E710900A61A97 /* CustomColorClamp.swift in Sources */,
 				7EAE3654221CD74D00C73511 /* ImageFilterApp.xcdatamodeld in Sources */,
+				7E6E0C1D221FB4BA00A61A97 /* CustomSharpenLuminanceFilter.swift in Sources */,
 				7E6E0C1B221F9FB100A61A97 /* GaussianFilterPreviewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
