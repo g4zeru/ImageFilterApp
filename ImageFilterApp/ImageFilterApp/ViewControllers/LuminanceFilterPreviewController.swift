@@ -20,13 +20,13 @@ class LuminanceFilterPreviewController: BaseViewController {
         let slider = UISlider()
         /// Range参照　https://qiita.com/shtnkgm/items/fb1425ef88d31fdad1d4#inputsharpness
         ///　違うFilterのパラメーターのRangeではあるものの公式のDefault値が0.4なので0.0~1.0は妥当だと思う
-        let LuminanceMaximumValue: Float = 1.00
-        let LuminanceMinimumValue: Float = 0.00
-        let LuminanceDefaultValue: Float = 0.40
+        let luminanceMaximumValue: Float = 1.00
+        let luminanceMinimumValue: Float = 0.00
+        let luminanceDefaultValue: Float = 0.40
         
-        slider.maximumValue = LuminanceMaximumValue
-        slider.minimumValue = LuminanceMinimumValue
-        slider.value = LuminanceDefaultValue
+        slider.maximumValue = luminanceMaximumValue
+        slider.minimumValue = luminanceMinimumValue
+        slider.value = luminanceDefaultValue
         return slider
     }()
     
