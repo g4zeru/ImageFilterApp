@@ -10,6 +10,10 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    var originImage: UIImage? = UIImage(named: "lena")
+    
+    let filter: ImageFilter = ImageFilter.sharedImageFilter
+    
     let backgroundView: UIView = {
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = UIColor.white
