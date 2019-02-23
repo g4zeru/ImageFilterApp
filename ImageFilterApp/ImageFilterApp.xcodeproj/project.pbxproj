@@ -13,8 +13,6 @@
 		7E6E0BF8221D00EB00A61A97 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0BF7221D00EB00A61A97 /* BaseViewController.swift */; };
 		7E6E0BFB221D0E2B00A61A97 /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0BFA221D0E2B00A61A97 /* ImageFilter.swift */; };
 		7E6E0BFE221D1BD900A61A97 /* model10211037_TP_V.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E6E0BFD221D1BD900A61A97 /* model10211037_TP_V.jpg */; };
-		7E6E0C01221D27DE00A61A97 /* FilterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C00221D27DE00A61A97 /* FilterListViewController.swift */; };
-		7E6E0C04221D294300A61A97 /* FilterListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C03221D294300A61A97 /* FilterListCollectionViewCell.swift */; };
 		7E6E0C06221E3BB200A61A97 /* ImageClipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C05221E3BB100A61A97 /* ImageClipper.swift */; };
 		7E6E0C0B221E680B00A61A97 /* CustomMonoChromeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C0A221E680B00A61A97 /* CustomMonoChromeFilter.swift */; };
 		7E6E0C0D221E6EE100A61A97 /* lena.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E6E0C0C221E6EE100A61A97 /* lena.png */; };
@@ -28,7 +26,6 @@
 		7E6E0C21221FC19300A61A97 /* CustomUnsharpMaskFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C20221FC19300A61A97 /* CustomUnsharpMaskFilter.swift */; };
 		7E6E0C23221FCB4600A61A97 /* UnsharpMaskPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E0C22221FCB4600A61A97 /* UnsharpMaskPreviewController.swift */; };
 		7EAE364C221CD74D00C73511 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE364B221CD74D00C73511 /* AppDelegate.swift */; };
-		7EAE364E221CD74D00C73511 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE364D221CD74D00C73511 /* ViewController.swift */; };
 		7EAE3654221CD74D00C73511 /* ImageFilterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE3652221CD74D00C73511 /* ImageFilterApp.xcdatamodeld */; };
 		7EAE3656221CD75300C73511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE3655221CD75300C73511 /* Assets.xcassets */; };
 		7EAE3659221CD75300C73511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE3657221CD75300C73511 /* LaunchScreen.storyboard */; };
@@ -63,8 +60,6 @@
 		7E6E0BF7221D00EB00A61A97 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7E6E0BFA221D0E2B00A61A97 /* ImageFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilter.swift; sourceTree = "<group>"; };
 		7E6E0BFD221D1BD900A61A97 /* model10211037_TP_V.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = model10211037_TP_V.jpg; sourceTree = "<group>"; };
-		7E6E0C00221D27DE00A61A97 /* FilterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListViewController.swift; sourceTree = "<group>"; };
-		7E6E0C03221D294300A61A97 /* FilterListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E6E0C05221E3BB100A61A97 /* ImageClipper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClipper.swift; sourceTree = "<group>"; };
 		7E6E0C0A221E680B00A61A97 /* CustomMonoChromeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMonoChromeFilter.swift; sourceTree = "<group>"; };
 		7E6E0C0C221E6EE100A61A97 /* lena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lena.png; path = Assets/lena.png; sourceTree = SOURCE_ROOT; };
@@ -79,7 +74,6 @@
 		7E6E0C22221FCB4600A61A97 /* UnsharpMaskPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsharpMaskPreviewController.swift; sourceTree = "<group>"; };
 		7EAE3648221CD74D00C73511 /* ImageFilterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFilterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAE364B221CD74D00C73511 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7EAE364D221CD74D00C73511 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7EAE3653221CD74D00C73511 /* ImageFilterApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageFilterApp.xcdatamodel; sourceTree = "<group>"; };
 		7EAE3655221CD75300C73511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EAE3658221CD75300C73511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -135,23 +129,12 @@
 		7E6E0BFF221D27B100A61A97 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7EAE364D221CD74D00C73511 /* ViewController.swift */,
-				7E6E0C02221D28FB00A61A97 /* FilterListView */,
 				7E6E0C12221F80FD00A61A97 /* GloomFilterPreviewController.swift */,
 				7E6E0C1A221F9FB100A61A97 /* GaussianFilterPreviewController.swift */,
 				7E6E0C1E221FBA2700A61A97 /* LuminanceFilterPreviewController.swift */,
 				7E6E0C22221FCB4600A61A97 /* UnsharpMaskPreviewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		7E6E0C02221D28FB00A61A97 /* FilterListView */ = {
-			isa = PBXGroup;
-			children = (
-				7E6E0C00221D27DE00A61A97 /* FilterListViewController.swift */,
-				7E6E0C03221D294300A61A97 /* FilterListCollectionViewCell.swift */,
-			);
-			path = FilterListView;
 			sourceTree = "<group>";
 		};
 		7E6E0C07221E4AF100A61A97 /* CustomFilters */ = {
@@ -460,10 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E6E0C19221F9E3100A61A97 /* CustomGaussianFilter.swift in Sources */,
-				7E6E0C01221D27DE00A61A97 /* FilterListViewController.swift in Sources */,
 				7E6E0C13221F80FD00A61A97 /* GloomFilterPreviewController.swift in Sources */,
-				7E6E0C04221D294300A61A97 /* FilterListCollectionViewCell.swift in Sources */,
-				7EAE364E221CD74D00C73511 /* ViewController.swift in Sources */,
 				7E6E0BFB221D0E2B00A61A97 /* ImageFilter.swift in Sources */,
 				7E6E0C21221FC19300A61A97 /* CustomUnsharpMaskFilter.swift in Sources */,
 				7E6E0BF8221D00EB00A61A97 /* BaseViewController.swift in Sources */,
