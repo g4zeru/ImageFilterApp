@@ -139,7 +139,7 @@
 				7E6E0C1A221F9FB100A61A97 /* GaussianFilterPreviewController.swift */,
 				7E6E0C1E221FBA2700A61A97 /* LuminanceFilterPreviewController.swift */,
 				7E6E0C22221FCB4600A61A97 /* UnsharpMaskPreviewController.swift */,
-				7EFC3EB5222135A6005B9B1A /* CustomView */,
+				7EFC3EB5222135A6005B9B1A /* Crop */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -215,14 +215,14 @@
 			path = ImageFilterAppUITests;
 			sourceTree = "<group>";
 		};
-		7EFC3EB5222135A6005B9B1A /* CustomView */ = {
+		7EFC3EB5222135A6005B9B1A /* Crop */ = {
 			isa = PBXGroup;
 			children = (
 				7EFC3EB62221361C005B9B1A /* CropRangeView.swift */,
 				7EFC3EBA22225970005B9B1A /* CropView.swift */,
 				7EFC3EB822223F04005B9B1A /* CropController.swift */,
 			);
-			path = CustomView;
+			path = Crop;
 			sourceTree = "<group>";
 		};
 		98F14A2A1F8E8F520DD663D8 /* Pods */ = {
