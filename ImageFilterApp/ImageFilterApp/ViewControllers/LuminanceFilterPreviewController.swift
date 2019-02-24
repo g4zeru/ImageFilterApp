@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import SnapKit
+
 class LuminanceFilterPreviewController: BaseViewController {
     
     private let preview: UIImageView = {

@@ -31,6 +31,9 @@
 		7EAE3659221CD75300C73511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EAE3657221CD75300C73511 /* LaunchScreen.storyboard */; };
 		7EAE3664221CD75300C73511 /* ImageFilterAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE3663221CD75300C73511 /* ImageFilterAppTests.swift */; };
 		7EAE366F221CD75300C73511 /* ImageFilterAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE366E221CD75300C73511 /* ImageFilterAppUITests.swift */; };
+		7EFC3EB72221361C005B9B1A /* CropRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC3EB62221361C005B9B1A /* CropRangeView.swift */; };
+		7EFC3EB922223F04005B9B1A /* CropController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC3EB822223F04005B9B1A /* CropController.swift */; };
+		7EFC3EBB22225970005B9B1A /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFC3EBA22225970005B9B1A /* CropView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		7EAE366A221CD75300C73511 /* ImageFilterAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageFilterAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAE366E221CD75300C73511 /* ImageFilterAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterAppUITests.swift; sourceTree = "<group>"; };
 		7EAE3670221CD75300C73511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EFC3EB62221361C005B9B1A /* CropRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropRangeView.swift; sourceTree = "<group>"; };
+		7EFC3EB822223F04005B9B1A /* CropController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropController.swift; sourceTree = "<group>"; };
+		7EFC3EBA22225970005B9B1A /* CropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
 		84C55685589EBBAD3888F7AF /* Pods_ImageFilterAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageFilterAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C133B6E625DE67AB11C739A8 /* Pods-ImageFilterAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageFilterAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageFilterAppTests/Pods-ImageFilterAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECA2AB5AE529499EB35B6B57 /* Pods-ImageFilterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageFilterApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageFilterApp/Pods-ImageFilterApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 				7E6E0C1A221F9FB100A61A97 /* GaussianFilterPreviewController.swift */,
 				7E6E0C1E221FBA2700A61A97 /* LuminanceFilterPreviewController.swift */,
 				7E6E0C22221FCB4600A61A97 /* UnsharpMaskPreviewController.swift */,
+				7EFC3EB5222135A6005B9B1A /* CustomView */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -206,6 +213,16 @@
 				7EAE3670221CD75300C73511 /* Info.plist */,
 			);
 			path = ImageFilterAppUITests;
+			sourceTree = "<group>";
+		};
+		7EFC3EB5222135A6005B9B1A /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				7EFC3EB62221361C005B9B1A /* CropRangeView.swift */,
+				7EFC3EBA22225970005B9B1A /* CropView.swift */,
+				7EFC3EB822223F04005B9B1A /* CropController.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		98F14A2A1F8E8F520DD663D8 /* Pods */ = {
@@ -443,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E6E0C19221F9E3100A61A97 /* CustomGaussianFilter.swift in Sources */,
+				7EFC3EB922223F04005B9B1A /* CropController.swift in Sources */,
 				7E6E0C13221F80FD00A61A97 /* GloomFilterPreviewController.swift in Sources */,
 				7E6E0BFB221D0E2B00A61A97 /* ImageFilter.swift in Sources */,
 				7E6E0C21221FC19300A61A97 /* CustomUnsharpMaskFilter.swift in Sources */,
@@ -452,8 +470,10 @@
 				7E6E0C1F221FBA2700A61A97 /* LuminanceFilterPreviewController.swift in Sources */,
 				7EAE364C221CD74D00C73511 /* AppDelegate.swift in Sources */,
 				7E6E0C0B221E680B00A61A97 /* CustomMonoChromeFilter.swift in Sources */,
+				7EFC3EB72221361C005B9B1A /* CropRangeView.swift in Sources */,
 				7E6E0C0F221E710900A61A97 /* CustomColorClamp.swift in Sources */,
 				7EAE3654221CD74D00C73511 /* ImageFilterApp.xcdatamodeld in Sources */,
+				7EFC3EBB22225970005B9B1A /* CropView.swift in Sources */,
 				7E6E0C1D221FB4BA00A61A97 /* CustomSharpenLuminanceFilter.swift in Sources */,
 				7E6E0C23221FCB4600A61A97 /* UnsharpMaskPreviewController.swift in Sources */,
 				7E6E0C1B221F9FB100A61A97 /* GaussianFilterPreviewController.swift in Sources */,

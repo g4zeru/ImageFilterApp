@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 class UnsharpMaskPreviewController: BaseViewController {
     private let preview: UIImageView = {
