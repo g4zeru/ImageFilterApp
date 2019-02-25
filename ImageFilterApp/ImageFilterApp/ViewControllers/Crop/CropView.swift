@@ -23,10 +23,30 @@ class CropView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.green
-        rangeView.frame = CGRect(origin: .zero, size: frame.size)
+        
         self.addSubview(rangeView)
+        
+        rangeView.snp.makeConstraints { (constraint) in
+            constraint.top.equalToSuperview()
+            constraint.bottom.equalToSuperview()
+            constraint.leading.equalToSuperview()
+            constraint.trailing.equalToSuperview()
+        }
     }
+    
+    init() {
+        super.init(frame: .zero)
+        
+        self.addSubview(rangeView)
+        
+        rangeView.snp.makeConstraints { (constraint) in
+            constraint.top.equalToSuperview()
+            constraint.bottom.equalToSuperview()
+            constraint.leading.equalToSuperview()
+            constraint.trailing.equalToSuperview()
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

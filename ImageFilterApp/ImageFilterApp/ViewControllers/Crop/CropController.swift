@@ -13,7 +13,7 @@ class CropController: BaseViewController {
     
     let cropView: CropView = {
         let cropViewWidth: CGFloat = UIScreen.main.bounds.width
-        return CropView(frame: CGRect(origin: .zero, size: CGSize(width: cropViewWidth, height: cropViewWidth + 50)))
+        return CropView()
     }()
     let button: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -25,6 +25,13 @@ class CropController: BaseViewController {
         super.viewDidLoad()
         self.view.addSubview(self.button)
         self.view.addSubview(self.cropView)
+        
+        cropView.snp.makeConstraints { (constraint) in
+            constraint.centerX.equalToSuperview()
+            constraint.centerY.equalToSuperview()
+            constraint.width.equalToSuperview()
+            constraint.height.equalTo(500)
+        }
         cropView.center = self.view.center
         cropView.inputImage = self.originImage
     }

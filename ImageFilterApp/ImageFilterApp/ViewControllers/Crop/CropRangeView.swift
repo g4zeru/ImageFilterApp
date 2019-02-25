@@ -19,14 +19,19 @@ class CropRangeView: UIScrollView {
         }
         set(image) {
             self.originImage = image
-            self.setupLayout()
         }
     }
     
     private var originImage: UIImage?
     
-    private func setupLayout() {
-        self.backgroundColor = UIColor.yellow
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        self.setupLayout(rect: rect)
+    }
+    
+    private func setupLayout(rect: CGRect) {
+        
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
         
@@ -39,31 +44,35 @@ class CropRangeView: UIScrollView {
         guard let image = originImage else {
             return
         }
-        self.contentSize = self.contentSize(imageSize: image.size)
+        self.contentSize = self.contentSize(imageSize: image.size, rect: rect)
+        
         self.contentView?.removeFromSuperview()
+        
         self.contentView = UIImageView(frame: CGRect(origin: .zero, size: self.contentSize))
         self.contentView?.image = self.originImage
-        self.contentView?.backgroundColor = UIColor.red
         
         self.addSubview(contentView!)
+        
     }
     
-    private func contentSize(imageSize: CGSize) -> CGSize {
-        if imageSize.width - imageSize.height == 0 {
-            if self.frame.size.width - self.frame.size.height > 0 {
-                return CGSize(width: self.frame.width + 1, height: self.frame.width + 1)
-            } else {
-                return CGSize(width: self.frame.height + 1, height: self.frame.height + 1)
-            }
-        } else {
-            if imageSize.width - imageSize.height > 0 {
-                let ratio = imageSize.width / imageSize.height
-                return CGSize(width: self.frame.height * ratio + 1, height:self.frame.height + 1)
-            } else {
-                let ratio = imageSize.height / imageSize.width
-                return CGSize(width: self.frame.width + 1, height: self.frame.width * ratio + 1)
-            }
+    private func contentSize(imageSize: CGSize, rect: CGRect) -> CGSize {
+        
+        var rect = rect
+        
+        let widthRatio = rect.width / imageSize.width
+        let heightRatio = rect.height / imageSize.height
+        
+        
+        if (widthRatio < heightRatio) {
+            rect.size.width = rect.height / imageSize.height * imageSize.width
+        } else if (widthRatio > heightRatio) {
+            rect.size.height = rect.width / imageSize.width * imageSize.height
         }
+        
+        rect.size.width += 1
+        rect.size.height += 1
+        
+        return rect.size
     }
 }
 extension CropRangeView: UIScrollViewDelegate {
