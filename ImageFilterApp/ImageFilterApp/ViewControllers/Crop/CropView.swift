@@ -23,10 +23,13 @@ class CropView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         self.setupLayout()
     }
+    
     init() {
         super.init(frame: .zero)
+        
         self.setupLayout()
     }
     

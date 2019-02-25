@@ -22,6 +22,7 @@ class CropController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setupLayout()
         cropView.inputImage = self.originImage
     }

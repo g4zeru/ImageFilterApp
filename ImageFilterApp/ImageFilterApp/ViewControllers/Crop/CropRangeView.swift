@@ -25,13 +25,12 @@ class CropRangeView: UIScrollView {
     private var originImage: UIImage?
     
     override func draw(_ rect: CGRect) {
-        super.draw(rect)
+        setupLayout()
         
-        self.setupLayout(rect: rect)
+        super.draw(rect)
     }
     
-    private func setupLayout(rect: CGRect) {
-        
+    private func setupLayout() {
         self.showsHorizontalScrollIndicator = false
         self.showsVerticalScrollIndicator = false
         
@@ -44,7 +43,7 @@ class CropRangeView: UIScrollView {
         guard let image = originImage else {
             return
         }
-        self.contentSize = self.contentSize(imageSize: image.size, rect: rect)
+        self.contentSize = self.contentSize(imageSize: image.size, rect: self.frame)
         
         self.contentView?.removeFromSuperview()
         
@@ -56,12 +55,9 @@ class CropRangeView: UIScrollView {
     }
     
     private func contentSize(imageSize: CGSize, rect: CGRect) -> CGSize {
-        
         var rect = rect
-        
         let widthRatio = rect.width / imageSize.width
         let heightRatio = rect.height / imageSize.height
-        
         
         if (widthRatio < heightRatio) {
             rect.size.width = rect.height / imageSize.height * imageSize.width
