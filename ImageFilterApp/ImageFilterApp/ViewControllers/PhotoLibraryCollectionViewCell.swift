@@ -8,14 +8,24 @@
 
 import Foundation
 import UIKit
+import Photos
 
 class PhotoLibraryCollectionViewCell: UICollectionViewCell {
-    private let imageView: UIImageView = UIImageView()
-    var image: UIImage?
+    
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = UIImageView.ContentMode.scaleAspectFill
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
+    private var asset: PHAsset?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupLayout()
     }
+    
     init() {
         super.init(frame: .zero)
         self.setupLayout()
@@ -26,12 +36,21 @@ class PhotoLibraryCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupLayout() {
-        self.contentView.addSubview(imageView)
+        self.addSubview(imageView)
+        
         self.imageView.snp.makeConstraints { (constraint) in
             constraint.top.equalToSuperview()
             constraint.bottom.equalToSuperview()
             constraint.leading.equalToSuperview()
             constraint.trailing.equalToSuperview()
+        }
+    }
+    
+    func updateCell(asset: PHAsset) {
+        self.asset = asset
+        
+        ImageAssetFetcher.fetchImage(asset: asset, imageOptions: ImageAssetFetcher.imageFetchFastOption, imageSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight)) {[weak self] (image, info) in
+            self?.imageView.image = image
         }
     }
 }
