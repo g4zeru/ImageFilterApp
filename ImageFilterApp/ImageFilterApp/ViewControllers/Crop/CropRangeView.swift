@@ -19,6 +19,7 @@ class CropRangeView: UIScrollView {
         }
         set(image) {
             self.originImage = image
+            setupLayout()
         }
     }
     
