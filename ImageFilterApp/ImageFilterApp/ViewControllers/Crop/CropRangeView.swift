@@ -51,7 +51,6 @@ class CropRangeView: UIScrollView {
         self.contentView?.image = self.originImage
         
         self.addSubview(contentView!)
-        
     }
     
     private func contentSize(imageSize: CGSize, rect: CGRect) -> CGSize {
@@ -71,6 +70,7 @@ class CropRangeView: UIScrollView {
         return rect.size
     }
 }
+
 extension CropRangeView: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return contentView

@@ -11,10 +11,10 @@ import UIKit
 
 class CropController: BaseViewController {
     
-    let cropView: CropView = {
+    private let cropView: CropView = {
         return CropView()
     }()
-    let button: UIButton = {
+    private let button: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         button.addTarget(self, action: #selector(crop), for: .touchUpInside)
         return button
