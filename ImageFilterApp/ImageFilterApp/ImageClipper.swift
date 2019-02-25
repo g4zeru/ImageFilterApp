@@ -11,23 +11,23 @@ import UIKit
 
 class ImageClipper {
     
-    static func resize(image: UIImage, size: CGSize) -> UIImage? {
+    static func resize(view: UIView, size: CGSize) -> UIImage? {
         
-        guard image.size.width > 0 &&
-            image.size.height > 0 &&
+        
+        guard view.frame.size.width > 0 &&
+            view.frame.size.height > 0 &&
             size.width > 0 &&
             size.height > 0 else {
             return nil
         }
         
-        let widthRatio = size.width / image.size.width
-        let heightRatio = size.height / image.size.height
+        let widthRatio = size.width / view.frame.size.width
+        let heightRatio = size.height / view.frame.size.height
         let ratio = widthRatio < heightRatio ? widthRatio : heightRatio
         
-        let resizedSize = CGSize(width: image.size.width * ratio, height: image.size.height * ratio)
-        
+        let resizedSize = CGSize(width: view.frame.size.width * ratio, height: view.frame.size.height * ratio)
         UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0)
-        image.draw(in: CGRect(origin: .zero, size: resizedSize))
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return resizedImage

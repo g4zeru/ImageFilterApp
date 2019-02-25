@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 class UnsharpMaskPreviewController: BaseViewController {
+    
     private let preview: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor.white
@@ -48,7 +50,6 @@ class UnsharpMaskPreviewController: BaseViewController {
         didChangeSliderValue()
         self.intensitySlider.addTarget(self, action: #selector(didChangeSliderValue), for: .valueChanged)
         self.radiusSlider.addTarget(self, action: #selector(didChangeSliderValue), for: .valueChanged)
-        // Do any additional setup after loading the view.
     }
     
     private func setupLayout() {
@@ -75,6 +76,7 @@ class UnsharpMaskPreviewController: BaseViewController {
     @objc private func didChangeSliderValue() {
         let radiusValue = self.radiusSlider.value
         let intensityValue = self.intensitySlider.value
+        
         guard let image = self.originImage else {
             return
         }
