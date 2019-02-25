@@ -23,32 +23,26 @@ class CropView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.addSubview(rangeView)
-        
-        rangeView.snp.makeConstraints { (constraint) in
-            constraint.top.equalToSuperview()
-            constraint.bottom.equalToSuperview()
-            constraint.leading.equalToSuperview()
-            constraint.trailing.equalToSuperview()
-        }
+        self.setupLayout()
     }
-    
     init() {
         super.init(frame: .zero)
-        
-        self.addSubview(rangeView)
-        
-        rangeView.snp.makeConstraints { (constraint) in
-            constraint.top.equalToSuperview()
-            constraint.bottom.equalToSuperview()
-            constraint.leading.equalToSuperview()
-            constraint.trailing.equalToSuperview()
-        }
+        self.setupLayout()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupLayout() {
+        self.addSubview(rangeView)
+        
+        rangeView.snp.makeConstraints { (constraint) in
+            constraint.top.equalToSuperview()
+            constraint.bottom.equalToSuperview()
+            constraint.leading.equalToSuperview()
+            constraint.trailing.equalToSuperview()
+        }
     }
     
     func crop() -> UIImage? {

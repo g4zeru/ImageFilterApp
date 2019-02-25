@@ -12,7 +12,6 @@ import UIKit
 class CropController: BaseViewController {
     
     let cropView: CropView = {
-        let cropViewWidth: CGFloat = UIScreen.main.bounds.width
         return CropView()
     }()
     let button: UIButton = {
@@ -23,6 +22,11 @@ class CropController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupLayout()
+        cropView.inputImage = self.originImage
+    }
+    
+    private func setupLayout() {
         self.view.addSubview(self.button)
         self.view.addSubview(self.cropView)
         
@@ -33,7 +37,6 @@ class CropController: BaseViewController {
             constraint.height.equalTo(500)
         }
         cropView.center = self.view.center
-        cropView.inputImage = self.originImage
     }
     
     @objc func crop() {
