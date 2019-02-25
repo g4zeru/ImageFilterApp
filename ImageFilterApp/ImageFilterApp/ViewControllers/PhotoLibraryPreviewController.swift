@@ -29,7 +29,6 @@ class PhotoLibraryPreviewController: BaseViewController {
         
         return collectionView
     }()
-    
     private let cropView: CropView = CropView()
     
     private var photos: [PHAsset] = [] {

@@ -10,12 +10,14 @@ import Foundation
 import Photos
 
 class ImageAssetFetcher {
+    
     class var thumbnailImageSize: CGSize {
         return CGSize(width: 50, height: 50)
     }
     class var imageSize: CGSize {
         return CGSize(width: 300, height: 300)
     }
+    
     static let mediaOptions: PHFetchOptions = {
         let sortOptions: [NSSortDescriptor] = [NSSortDescriptor(key: "creationDate", ascending: false)]
         let options: PHFetchOptions = PHFetchOptions()
@@ -23,6 +25,7 @@ class ImageAssetFetcher {
         options.sortDescriptors = sortOptions
         return options
     }()
+    
     static let imageFetchFastOption: PHImageRequestOptions = {
         let option = PHImageRequestOptions()
         option.resizeMode = .fast
@@ -33,6 +36,7 @@ class ImageAssetFetcher {
         let asset: PHFetchResult = PHAsset.fetchAssets(with: .image, options: mediaOptions)
         return asset.objects(at: IndexSet(integersIn: 0...asset.count - 1))
     }
+    
     static func fetchImage(asset: PHAsset, imageOptions: PHImageRequestOptions?, imageSize: CGSize, completion: @escaping (UIImage?,[AnyHashable: Any]?)->()) {
         PHImageManager().requestImage(for: asset, targetSize: imageSize, contentMode: .default, options: imageOptions, resultHandler: completion)
     }
