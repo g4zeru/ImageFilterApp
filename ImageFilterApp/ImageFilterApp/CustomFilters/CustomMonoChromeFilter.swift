@@ -39,7 +39,7 @@ class CustomMonoChromeFilter: CIFilter {
         return monoChromeFilter.outputImage
     }
     
-    static func create(image: CIImage?, color: CIColor, intensity: NSNumber) -> CIFilter? {
+    static func create(image: CIImage?, color: CIColor, intensity: NSNumber) -> CIFilter {
         let filter = CustomMonoChromeFilter()
         filter.inputImage = image
         filter.color = color
