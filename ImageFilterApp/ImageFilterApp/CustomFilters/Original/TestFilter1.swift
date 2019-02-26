@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TestFilter1: CustomFilter {
+class TestFilter1: BaseCustomFilter {
     override var filterName: String {
         return "TestFilter1"
     }

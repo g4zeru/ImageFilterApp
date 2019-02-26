@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
-class TestFilter2: CustomFilter {
+class TestFilter2: BaseCustomFilter {
     
     override var outputImage: CIImage? {
-        return self.cropFilter(image: self.hexagonalPixellateFilter(image: self.colorCrossPolynomialFilter(image: self.inputImage)))
+        //return self.cropFilter(image: self.hexagonalPixellateFilter(image: self.colorCrossPolynomialFilter(image: self.inputImage)))
+        return self.colorCrossPolynomialFilter(image: inputImage)
     }
     
     private func colorCrossPolynomialFilter(image: CIImage?) -> CIImage? {
@@ -20,9 +21,9 @@ class TestFilter2: CustomFilter {
             return image
         }
         colorCrossPolynomialFilter.setValue(image, forKey: "inputImage")
-        colorCrossPolynomialFilter.setValue(CIVector(string: "[1 0 0 0 1 0 0 0 0 0 0]"), forKey: "inputRedCoefficients")
-        colorCrossPolynomialFilter.setValue(CIVector(string: "[0 1 0 0 0 0 0 1 0 0 0]"), forKey: "inputGreenCoefficients")
-        colorCrossPolynomialFilter.setValue(CIVector(string: "[0 0 1 0 0 0 0 0 1 0 0]"), forKey: "inputBlueCoefficients")
+        colorCrossPolynomialFilter.setValue(CIVector(string: "[0 -1 0 -1 5 -1 0 -1 0 0]"), forKey: "inputRedCoefficients")
+        colorCrossPolynomialFilter.setValue(CIVector(string: "[0 -1 0 -1 5 -1 0 -1 0 0]"), forKey: "inputGreenCoefficients")
+        colorCrossPolynomialFilter.setValue(CIVector(string: "[0 -1 0 -1 5 -1 0 -1 0 0]"), forKey: "inputBlueCoefficients")
         return colorCrossPolynomialFilter.outputImage
     }
     
