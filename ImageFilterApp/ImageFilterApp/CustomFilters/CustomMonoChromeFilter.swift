@@ -29,7 +29,7 @@ class CustomMonoChromeFilter: CIFilter {
         guard let inputImage = self.inputImage else {
             return nil
         }
-        guard let monoChromeFilter: CIFilter = CIFilter(name: "CIColorMonoChrome") else {
+        guard let monoChromeFilter: CIFilter = CIFilter(name: "CIColorMonochrome") else {
             return inputImage
         }
         monoChromeFilter.setDefaults()
@@ -39,7 +39,7 @@ class CustomMonoChromeFilter: CIFilter {
         return monoChromeFilter.outputImage
     }
     
-    static func create(image: CIImage?, color: CIColor, intensity: NSNumber) -> CIFilter? {
+    static func create(image: CIImage?, color: CIColor, intensity: NSNumber) -> CIFilter {
         let filter = CustomMonoChromeFilter()
         filter.inputImage = image
         filter.color = color
