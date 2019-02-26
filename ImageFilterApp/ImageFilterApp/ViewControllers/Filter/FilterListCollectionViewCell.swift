@@ -11,9 +11,11 @@ import UIKit
 import SnapKit
 
 class FilterListCollectionViewCell: UICollectionViewCell {
+    
     private let label: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Arial", size: 15)
+        label.font = UIFont(name: "Hiragino Sans", size: 15)
+        label.textAlignment = NSTextAlignment.center
         return label
     }()
     private let imageView = UIImageView()
@@ -40,6 +42,7 @@ class FilterListCollectionViewCell: UICollectionViewCell {
             constraint.top.equalToSuperview()
             constraint.centerX.equalToSuperview()
             constraint.leading.equalToSuperview().offset(5)
+            constraint.height.equalTo(20)
         }
         self.imageView.snp.makeConstraints { (constraint) in
             constraint.top.equalTo(self.label.snp.bottom).offset(5)
@@ -49,8 +52,8 @@ class FilterListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func updateLayout(image: UIImage?, text: String?) {
-        self.imageView.image = image
-        self.label.text = text
+    func updateLayout(filteredImage: UIImage, filterName: String) {
+        self.imageView.image = filteredImage
+        self.label.text = filterName
     }
 }
