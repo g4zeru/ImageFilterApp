@@ -45,7 +45,11 @@ class PhotoLibraryPreviewController: BaseViewController {
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        
+        self.setupLayout()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         PHPhotoLibrary.requestAuthorization { [weak self] (auth) in
             switch auth {
             case .authorized:
@@ -96,6 +100,7 @@ extension PhotoLibraryPreviewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoLibraryCollectionViewCell else {
             fatalError()
         }
+        cell.resetImage()
         cell.updateCell(asset: photos[indexPath.item])
         return cell
     }

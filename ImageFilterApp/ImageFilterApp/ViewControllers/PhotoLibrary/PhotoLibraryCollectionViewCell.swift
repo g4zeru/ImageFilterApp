@@ -46,6 +46,11 @@ class PhotoLibraryCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func resetImage() {
+        self.asset = nil
+        self.imageView.image = nil
+    }
+    
     func updateCell(asset: PHAsset) {
         self.asset = asset
         

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class CustomUnsharpMaskFilter: CIFilter {
+    
     private var inputImage: CIImage?
     private var radius: NSNumber = 0.0
     private var intensity: NSNumber = 0.0
