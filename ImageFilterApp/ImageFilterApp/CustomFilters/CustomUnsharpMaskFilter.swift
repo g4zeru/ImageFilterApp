@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CustomUnsharpMaskFilter: CustomFilter {
+class CustomUnsharpMaskFilter: CIFilter {
     
     class var radiusMaximumValue: Float {
         return 100.00
@@ -35,10 +35,6 @@ class CustomUnsharpMaskFilter: CustomFilter {
     private var radius: NSNumber = 0.0
     private var intensity: NSNumber = 0.0
     
-    override var filterName: String {
-        return "unsharpMask"
-    }
-    
     override var outputImage: CIImage? {
         guard let inputImage = self.inputImage else {
             return nil
@@ -53,12 +49,6 @@ class CustomUnsharpMaskFilter: CustomFilter {
             return inputImage
         }
         return unsharpMaskedImage
-    }
-    
-    override func create(image: CIImage?) -> CIFilter? {
-        let radius = NSNumber(value: CustomUnsharpMaskFilter.radiusDefaultValue)
-        let intensity = NSNumber(value: CustomUnsharpMaskFilter.intensityDefaultValue)
-        return CustomUnsharpMaskFilter.create(image: image, radius: radius, intensity: intensity)
     }
     
     static func create(image: CIImage?, radius: NSNumber, intensity: NSNumber) -> CIFilter {
