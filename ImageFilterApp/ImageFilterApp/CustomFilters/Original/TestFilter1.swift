@@ -15,9 +15,9 @@ class TestFilter1: CustomFilter {
     }
     
     override var outputImage: CIImage? {
-        let monoChromeFilter = CustomMonoChromeFilter.create(image: inputImage, color: CustomMonoChromeFilter.A1, intensity: 0.6)
+        let monoChromeFilter = CustomMonoChromeFilter.create(image: inputImage, color: CustomMonoChromeFilter.A3, intensity: 0.8)
         let monoChromedImage = monoChromeFilter.outputImage
-        let gloomFilter = CustomGloomFilter.create(image: monoChromedImage, radius: 20, intensity: 0.8)
+        let gloomFilter = CustomGloomFilter.create(image: monoChromedImage, radius: 30, intensity: 0.8)
         return gloomFilter.outputImage
     }
 }

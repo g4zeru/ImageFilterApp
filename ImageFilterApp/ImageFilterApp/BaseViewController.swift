@@ -10,7 +10,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-    var originImage: UIImage? = UIImage(named: "lena")
+    var originImage: UIImage? = UIImage(named: "model")
     
     let filter: ImageFilter = ImageFilter.sharedImageFilter
     

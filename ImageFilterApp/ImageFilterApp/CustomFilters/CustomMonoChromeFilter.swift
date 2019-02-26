@@ -29,7 +29,7 @@ class CustomMonoChromeFilter: CIFilter {
         guard let inputImage = self.inputImage else {
             return nil
         }
-        guard let monoChromeFilter: CIFilter = CIFilter(name: "CIColorMonoChrome") else {
+        guard let monoChromeFilter: CIFilter = CIFilter(name: "CIColorMonochrome") else {
             return inputImage
         }
         monoChromeFilter.setDefaults()

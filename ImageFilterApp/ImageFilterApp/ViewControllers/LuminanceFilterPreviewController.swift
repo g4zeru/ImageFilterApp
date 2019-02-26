@@ -37,7 +37,10 @@ class LuminanceFilterPreviewController: BaseViewController {
         self.view.addSubview(self.preview)
         self.view.addSubview(self.luminanceSlider)
         self.didChangeShapenLuminanceValue()
-        self.luminanceSlider.addTarget(self, action: #selector(didChangeShapenLuminanceValue), for: UIControl.Event.valueChanged)
+        let filter = TestFilter2()
+        filter.inputImage = CIImage(image: originImage!)
+        self.preview.image = self.filter.createImage(filter: filter)
+        //self.luminanceSlider.addTarget(self, action: #selector(didChangeShapenLuminanceValue), for: UIControl.Event.valueChanged)
         self.setupLayer()
     }
     
