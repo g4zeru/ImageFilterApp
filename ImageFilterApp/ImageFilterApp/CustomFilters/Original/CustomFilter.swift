@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CustomFilter: CIFilter {
+class BaseCustomFilter: CIFilter {
     var inputImage: CIImage?
     var filterName: String {
         return "CustomFilter"
