@@ -14,6 +14,16 @@ class CustomGaussianFilter: CIFilter {
     private var inputImage: CIImage?
     private var radius: NSNumber = 0.0
     
+    class var radiusMaximumValue: Float {
+        return 100.00
+    }
+    class var radiusMinimumValue: Float {
+        return 0.00
+    }
+    class var radiusDefaultValue: Float {
+        return 10.00
+    }
+    
     override var outputImage: CIImage? {
         guard let inputImage = self.inputImage else {
             return nil
