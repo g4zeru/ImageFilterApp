@@ -15,6 +15,26 @@ class CustomUnsharpMaskFilter: CIFilter {
     private var radius: NSNumber = 0.0
     private var intensity: NSNumber = 0.0
     
+    class var intensityMaximumValue: Float {
+        return 1.00
+    }
+    class var intensityMinimumValue: Float {
+        return 0.00
+    }
+    class var intensityDefaultValue: Float {
+        return 0.50
+    }
+    
+    class var radiusMaximumValue: Float {
+        return 100.00
+    }
+    class var radiusMinimumValue: Float {
+        return 0.00
+    }
+    class var radiusDefaultValue: Float {
+        return 10.00
+    }
+    
     override var outputImage: CIImage? {
         guard let inputImage = self.inputImage else {
             return nil

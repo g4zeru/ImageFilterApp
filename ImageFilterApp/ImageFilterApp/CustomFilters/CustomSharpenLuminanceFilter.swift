@@ -13,6 +13,16 @@ class CustomSharpenLuminanceFilter: CIFilter {
     private var inputImage: CIImage?
     private var sharpness: Float?
     
+    class var sharpnessMaximumValue: Float {
+        return 1.00
+    }
+    class var sharpnessMinimumValue: Float {
+        return 0.00
+    }
+    class var sharpnessDefaultValue: Float {
+        return 0.40
+    }
+    
     override var outputImage: CIImage? {
         guard let inputImage = self.inputImage else {
             return nil
